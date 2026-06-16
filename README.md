@@ -1,9 +1,5 @@
 qBittorrent - A BitTorrent client in Qt
 ------------------------------------------
-
-[![GitHub Actions CI Status](https://github.com/qbittorrent/qBittorrent/actions/workflows/ci_ubuntu.yaml/badge.svg)](https://github.com/qbittorrent/qBittorrent/actions)
-[![Coverity Status](https://scan.coverity.com/projects/5494/badge.svg)](https://scan.coverity.com/projects/5494)
-********************************
 ### Description:
 qBittorrent is a bittorrent client programmed in C++ / Qt that uses
 libtorrent (sometimes called libtorrent-rasterbar) by Arvid Norberg.
@@ -14,15 +10,19 @@ support as well as many features.
 
 The free [IP to Country Lite database](https://db-ip.com/db/download/ip-to-country-lite) by [DB-IP](https://db-ip.com/) is used for resolving the countries of peers. The database is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-### Installation:
+### About this fork:
 
-Refer to the [INSTALL](INSTALL) file.
+Builded with a backport of the Qt 6 qtbase module, tailored for compatibility with Windows 7, 8 and 8.1 (https://github.com/crystalidea/qt6windows7).
 
-### Public key:
-Starting from v3.3.4 all source tarballs and binaries are signed.<br />
-The key currently used is 4096R/[5B7CC9A2](https://pgp.mit.edu/pks/lookup?op=get&search=0x6E4A2D025B7CC9A2) with fingerprint `D8F3DA77AAC6741053599C136E4A2D025B7CC9A2`.<br />
-You can also download it from [here](https://github.com/qbittorrent/qBittorrent/raw/master/5B7CC9A2.asc).<br />
-**PREVIOUSLY** the following key was used to sign the v3.3.4 source tarballs and v3.3.4 Windows installer **only**: 4096R/[520EC6F6](https://pgp.mit.edu/pks/lookup?op=get&search=0xA1ACCAE4520EC6F6) with fingerprint `F4A5FD201B117B1C2AB590E2A1ACCAE4520EC6F6`.<br />
+Many of other Qt 6 modules are known to work fine on Windows 7 without modifications when compiled with patched qtbase. Verified modules:
+qt5compat
+qtimageformats
+qttools
+... please let me know which work and which don't !
+
+Known issues:
+QRhi using DirectX 11/12 is not ported
+So themes won't work...
 
 ### Misc:
 For more information please visit:
@@ -39,6 +39,3 @@ https://bugs.qbittorrent.org
 
 Official IRC channel:
 [#qbittorrent on irc.libera.chat](ircs://irc.libera.chat:6697/qbittorrent)
-
-------------------------------------------
-sledgehammer999 \<sledgehammer999@qbittorrent.org\>
